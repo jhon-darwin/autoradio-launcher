@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:orientation="vertical">
+
+    <!-- Fila superior: tarjeta izquierda (reloj + accesos) y rejilla de apps -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Tarjeta izquierda -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.32"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tvClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--:--"
+                android:textColor="@color/text_primary"
+                android:textSize="44sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text=""
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="18dp"
+                android:background="@color/divider" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Accesos rápidos"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:layout_marginBottom="10dp" />
+
+            <LinearLayout
+                android:id="@+id/btnRadio"
+                style="@style/QuickButton">
+                <TextView style="@style/QuickButtonText" android:text="📻  Radio" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnMusic"
+                style="@style/QuickButton">
+                <TextView style="@style/QuickButtonText" android:text="🎵  Música" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnPhone"
+                style="@style/QuickButton">
+                <TextView style="@style/QuickButtonText" android:text="📞  Teléfono" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnCamera"
+                style="@style/QuickButton">
+                <TextView style="@style/QuickButtonText" android:text="🎥  Cámara" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Rejilla de apps -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.68"
+            android:background="@drawable/bg_card"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aplicaciones"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:layout_marginBottom="8dp" />
+
+            <GridView
+                android:id="@+id/gridApps"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:numColumns="5"
+                android:horizontalSpacing="12dp"
+                android:verticalSpacing="12dp"
+                android:stretchMode="columnWidth"
+                android:scrollbars="none" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Barra inferior -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/card_bg"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/tvClockBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="--:--"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mi Launcher"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
